@@ -1,0 +1,119 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=17;
+	taxlabels
+	'ADO30543.1_Porcine_astrovirus_2_Shanghai/2008_swine_Mamastrovirus'
+	'AEM37633.1_California_sea_lion_astrovirus_10_Zalophus_californianus__California_sea_lion_'
+	'AEQ33643.1_Pigeon_avian_nephritis_virus_pigeon_Avastrovirus'
+	'AFI71936.1_Dog_astrovirus_Mamastrovirus'
+	'AOR51907.1_Mamastrovirus_5_Canis_lupus_familiaris_Mamastrovirus'
+	FS5_k141_123157_-_ORF_1__frame_2__translation[&!color=#cc0000]
+	FSD17_k141_16873_-_ORF_1__frame_1__translation[&!color=#cc0000]
+	FSD17_k141_33617_-_ORF_1__frame_3__translation[&!color=#cc0000]
+	'Q67726.1_Human_astrovirus_1_Homo_sapiens__Human__Mamastrovirus'
+	'Q9JH69.3_Turkey_astrovirus_1_Meleagris_gallopavo__Wild_turkey__Avastrovirus'
+	'UMO75864.1_Zhejiang_avastrovirus_pigeon_Avastrovirus'
+	'UNJ12753.1_Duck_astrovirus_duck_Avastrovirus'
+	'XBH23877.1_Coleura_bat_astrovirus_Coleura_afra'
+	'YP_009047246.1_Bovine_astrovirus_CH13_cattle_Mamastrovirus'
+	'YP_009052461.1_Feline_astrovirus_D1_Felis_catus_Mamastrovirus'
+	'YP_009664775.1_Bottlenose_dolphin_astrovirus_1_Tursiops_truncatus__Bottlenose_dolphin__Mamastrovirus'
+	'YP_009664777.1_Mamastrovirus_11_Zalophus_californianus__California_sea_lion__Mamastrovirus'
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ('ADO30543.1_Porcine_astrovirus_2_Shanghai/2008_swine_Mamastrovirus':0.247853,((((('AFI71936.1_Dog_astrovirus_Mamastrovirus':0.01014,'AOR51907.1_Mamastrovirus_5_Canis_lupus_familiaris_Mamastrovirus':0.004495)[&bootstrap=100]:0.08392,'XBH23877.1_Coleura_bat_astrovirus_Coleura_afra':0.065553)[&bootstrap=89]:0.056149,(FSD17_k141_16873_-_ORF_1__frame_1__translation:3.0E-6,FS5_k141_123157_-_ORF_1__frame_2__translation:0.010135)[&bootstrap=100]:0.132995)[&bootstrap=98]:0.089186,'AEM37633.1_California_sea_lion_astrovirus_10_Zalophus_californianus__California_sea_lion_':0.24843)[&bootstrap=65]:0.047735,('YP_009664775.1_Bottlenose_dolphin_astrovirus_1_Tursiops_truncatus__Bottlenose_dolphin__Mamastrovirus':0.218766,(((('YP_009664777.1_Mamastrovirus_11_Zalophus_californianus__California_sea_lion__Mamastrovirus':0.013454,FSD17_k141_33617_-_ORF_1__frame_3__translation:0.03514)[&bootstrap=100]:0.205434,'YP_009047246.1_Bovine_astrovirus_CH13_cattle_Mamastrovirus':0.344776)[&bootstrap=47]:0.066701,'YP_009052461.1_Feline_astrovirus_D1_Felis_catus_Mamastrovirus':0.20958)[&bootstrap=100]:0.269007,(('AEQ33643.1_Pigeon_avian_nephritis_virus_pigeon_Avastrovirus':0.173819,'UMO75864.1_Zhejiang_avastrovirus_pigeon_Avastrovirus':0.111324)[&bootstrap=100]:0.415613,('UNJ12753.1_Duck_astrovirus_duck_Avastrovirus':0.228762,'Q9JH69.3_Turkey_astrovirus_1_Meleagris_gallopavo__Wild_turkey__Avastrovirus':0.511542)[&bootstrap=88]:0.134249)[&bootstrap=100]:0.656029)[&bootstrap=99]:0.202704)[&bootstrap=100]:0.14895)[&bootstrap=99]:0.108355,'Q67726.1_Human_astrovirus_1_Homo_sapiens__Human__Mamastrovirus':0.21279);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="bootstrap";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bootstrap";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

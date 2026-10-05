@@ -1,0 +1,116 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=14;
+	taxlabels
+	AMB51357_Grouper_betanodavirus_Epinephelus_lanceolatus_Betanodavirus
+	AYU58613_Australasian_snapper-associated_noda-like_virus_Pagrus_auratus
+	FS21_k141_187329_-_ORF_1__frame_3__translation[&!color=#cc0000]
+	FS6_k141_115734_-_ORF_10__frame_3__translation[&!color=#cc0000]
+	FS9_k141_197491_-_ORF_9__frame_1__translation[&!color=#cc0000]
+	Q9IMM4_Nodamura_virus_Mag115_Lepidoptera_Alphanodavirus
+	RDRP_AHNNV_Atlantic_halibut_nodavirus_Hippoglossus_hippoglossus__Atlantic_halibut___Pleuronectes_hippoglossus__Betanodavirus
+	RDRP_BBV_Black_beetle_virus_Heteronychus_arator__African_black_beetle_-Alphanodavirus
+	RDRP_BOOLV_Boolarra_virus_Hepialidae__ghost_moths__Nodavirus
+	RDRP_GGNNV_Greasy_grouper_nervous_necrosis_virus_Epinephelus_tauvina__Greasy_grouper___Perca_tauvina__Betanodavirus
+	WWZ85563_Euphausia_pacifica_noda-like_virus_1_Euphausia_pacifica
+	XBR32760_Sylvilagus_tetnovirus_Sylvilagus_audubonii_rabbit_
+	XFH15250_Tetranychus_ogmophallos_alphanodavirus_1_Tetranychus_ogmophallos_Alphanodavirus
+	XOL04953_Dicentrarchus_labrax_betanodavirus_Dicentrarchus_labrax_Betanodavirus
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (AMB51357_Grouper_betanodavirus_Epinephelus_lanceolatus_Betanodavirus:4.13E-4,(RDRP_GGNNV_Greasy_grouper_nervous_necrosis_virus_Epinephelus_tauvina__Greasy_grouper___Perca_tauvina__Betanodavirus:0.0011,XOL04953_Dicentrarchus_labrax_betanodavirus_Dicentrarchus_labrax_Betanodavirus:0.015673)[&bootstrap=81]:0.005525,(RDRP_AHNNV_Atlantic_halibut_nodavirus_Hippoglossus_hippoglossus__Atlantic_halibut___Pleuronectes_hippoglossus__Betanodavirus:0.041509,((((FS6_k141_115734_-_ORF_10__frame_3__translation:0.01098,(FS9_k141_197491_-_ORF_9__frame_1__translation:0.00574,FS21_k141_187329_-_ORF_1__frame_3__translation:0.008424)[&bootstrap=79]:0.005629)[&bootstrap=100]:0.219206,XBR32760_Sylvilagus_tetnovirus_Sylvilagus_audubonii_rabbit_:0.216064)[&bootstrap=100]:0.76929,XFH15250_Tetranychus_ogmophallos_alphanodavirus_1_Tetranychus_ogmophallos_Alphanodavirus:1.006458)[&bootstrap=56]:0.147963,(((Q9IMM4_Nodamura_virus_Mag115_Lepidoptera_Alphanodavirus:0.469493,WWZ85563_Euphausia_pacifica_noda-like_virus_1_Euphausia_pacifica:0.74269)[&bootstrap=89]:0.129302,(RDRP_BBV_Black_beetle_virus_Heteronychus_arator__African_black_beetle_-Alphanodavirus:0.085781,RDRP_BOOLV_Boolarra_virus_Hepialidae__ghost_moths__Nodavirus:0.097878)[&bootstrap=100]:0.534085)[&bootstrap=95]:0.391903,AYU58613_Australasian_snapper-associated_noda-like_virus_Pagrus_auratus:1.242881)[&bootstrap=82]:0.277466)[&bootstrap=100]:0.871337)[&bootstrap=100]:0.069236);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="bootstrap";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bootstrap";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

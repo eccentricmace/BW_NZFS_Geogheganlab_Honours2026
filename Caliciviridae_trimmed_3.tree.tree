@@ -1,0 +1,160 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=58;
+	taxlabels
+	4NRU_A_Murine_norovirus_1_Norovirus
+	AAC57044_Reptile_calicivirus_Vesivirus
+	ABI34904_Vesicular_exanthema_of_swine_virus_Vesivirus
+	ACQ44559_Valovirus_valerienense_Sus_scrofa__swine__Valovirus
+	'AEA36681_Calicivirus_chicken/V0013/Bayern/2004_Gallus_gallus'
+	AEM37580_California_sea_lion_sapovirus_2_Zalophus_californianus__California_sea_lion__Sapovirus
+	AEM37581_California_sea_lion_sapovirus_1_Zalophus_californianus__California_sea_lion__Sapovirus
+	'AFO37806_Nebovirus_Bo/M3641/2011/HUN_Bos_taurus__cattle__Nebovirus'
+	AHE37915_Rhesus_macaque_recovirus_rhesus_macaque_Recovirus
+	ALC74362_Bovine_calicivirus_strain_Kirklareli_bovine_Nebovirus
+	ALF04311_Feline_calicivirus_SH_cheetah_Vesivirus
+	'ATD51063_Sapovirus_GII.8_Homo_sapiens_Sapovirus'
+	AUO60017_California_sea_lion_norovirus_Zalophus_californianus__California_sea_lion__Norovirus
+	AVM87208_Dongbei_arctic_lamprey_calicivirus_1_Lethenteron_camtschaticum
+	AVM87221_Guangdong_greater_green_snake_calicivirus_Cyclophiops_major
+	AVM87226_Zhejiang_gunthers_frog_calicivirus_1_Sylvirana_guentheri
+	'AWU65998_Recovirus_sp._Homo_sapiens_Recovirus'
+	AXQ39978_Norovirus_GII_Homo_sapiens_Norovirus
+	'BAL14650_Sapovirus_Hu/20072248/2008/JP_Homo_sapiens_Sapovirus'
+	BBO25149_Sapovirus_GI_Homo_sapiens_Sapovirus
+	FS14_k141_1079_-_ORF_2__frame_2__translation[&!color=#990000]
+	FS14_k141_16632_-_ORF_1__frame_1__translation[&!color=#990000]
+	FS15_k141_1417_-_ORF_19__frame_1__translation[&!color=#990000]
+	FS15_k141_26065_-_ORF_12__frame_3__translation[&!color=#990000]
+	FS18_k141_10519_-_ORF_1__frame_1__translation[&!color=#990000]
+	FS20_k141_21483_-_ORF_1__frame_3__translation[&!color=#990000]
+	FS22_k141_74552_-_ORF_1__frame_3__translation[&!color=#990000]
+	FS4_k141_130226_-_ORF_1__frame_1__translation[&!color=#990000]
+	FS4_k141_154521_-_ORF_1__frame_2__translation[&!color=#990000]
+	FS6_k141_63254_-_ORF_1__frame_3__translation[&!color=#990000]
+	FS7_k141_30866_-_ORF_1__frame_3__translation[&!color=#990000]
+	FS7_k141_43655_-_ORF_1__frame_3__translation[&!color=#990000]
+	FS9_k141_68500_-_ORF_2__frame_2__translation[&!color=#990000]
+	FSD13_k141_46436_-_ORF_6__frame_3__translation[&!color=#990000]
+	FSD17_k141_2047_-_ORF_1__frame_1__translation[&!color=#990000]
+	FSD17_k141_3901_-_ORF_11__frame_2__translation[&!color=#990000]
+	FSD3_k141_100302_-_ORF_1__frame_2__translation[&!color=#990000]
+	FSD3_k141_113413_-_ORF_1__frame_2__translation[&!color=#990000]
+	QCC62370_Hare_calicivirus_Australia-3_Lepus_europaeus_Lagovirus
+	QCZ35343_San_Miguel_sea_lion_virus_12_Zalophus_californianus_Vesivirus
+	QFS19095_Norovirus_GII_swine_Norovirus
+	'QHN60790_Sapovirus_sp._Homo_sapiens_Sapovirus'
+	QIB98724_Atlantic_salmon_calicivirus_Salmo_salar__smolt_Salovirus
+	QQR34431_Rabbit_hemorrhagic_disease_virus_2_Vulpes_vulpes_Lagovirus
+	UFQ21768_Ameiurus_nebulosus_calicivirus_1_Ameiurus_nebulosus
+	USL85468_Avian_associated_calicivirus_1_Prunella_modularis
+	WRV02107_Stoat_valovirus_1_Mustela_erminea_Valovirus
+	'WRW35011_Salovirus_sp._Odobenus_rosmarus_Salovirus'
+	XPD11852_Chicken_calicivirus_Neogale_vison_Bavovirus
+	'XUS49666_Valovirus_sp._tibetan_pig_Valovirus'
+	'XZX72822_Nacovirus_sp._pigeon_Nacovirus'
+	YP_009237937_Norovirus_GIII_bovine_Norovirus
+	YP_009238498_Norovirus_GIV_Homo_sapiens_Norovirus
+	YP_009345598_Bat_sapovirus_Eidolon_helvum__Straw-coloured_fruit_bat__Sapovirus
+	YP_009417302_Fathead_minnow_calicivirus_Pimephales_promelas_Minovirus
+	YP_009666353_Turkey_calicivirus_turkey_Nacovirus
+	'YP_010790303_Calicivirus_chicken/V0021/Bayern/2004_chicken_Bavovirus'
+	YP_529897_Newbury_agent_1_cattle_Nebovirus
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ('YP_010790303_Calicivirus_chicken/V0021/Bayern/2004_chicken_Bavovirus':0.006561,'AEA36681_Calicivirus_chicken/V0013/Bayern/2004_Gallus_gallus':0.008352,((((YP_009666353_Turkey_calicivirus_turkey_Nacovirus:0.408884,XPD11852_Chicken_calicivirus_Neogale_vison_Bavovirus[&!rotate=false]:0.408053)[&bootstrap=100,!rotate=false]:0.189643,'XZX72822_Nacovirus_sp._pigeon_Nacovirus'[&!rotate=false]:0.632477)[&bootstrap=100,!rotate=true]:0.407284,((YP_009345598_Bat_sapovirus_Eidolon_helvum__Straw-coloured_fruit_bat__Sapovirus:0.499164,((((('QHN60790_Sapovirus_sp._Homo_sapiens_Sapovirus':0.024272,'BAL14650_Sapovirus_Hu/20072248/2008/JP_Homo_sapiens_Sapovirus':0.026385)[&bootstrap=100]:0.060381,(FS18_k141_10519_-_ORF_1__frame_1__translation:0.027219,((FS14_k141_1079_-_ORF_2__frame_2__translation:1.0E-6,(FS15_k141_1417_-_ORF_19__frame_1__translation:2.0E-6,FS4_k141_154521_-_ORF_1__frame_2__translation:1.0E-6)[&bootstrap=81]:2.0E-6)[&bootstrap=56]:0.010079,AEM37580_California_sea_lion_sapovirus_2_Zalophus_californianus__California_sea_lion__Sapovirus:0.056662)[&bootstrap=76]:0.048738)[&bootstrap=100]:0.059492)[&bootstrap=100]:0.063789,((FS15_k141_26065_-_ORF_12__frame_3__translation:1.0E-6,FS4_k141_130226_-_ORF_1__frame_1__translation:0.004965)[&bootstrap=100]:0.110506,'ATD51063_Sapovirus_GII.8_Homo_sapiens_Sapovirus':0.090657)[&bootstrap=100]:0.055214)[&bootstrap=100]:0.15182,BBO25149_Sapovirus_GI_Homo_sapiens_Sapovirus:0.236985)[&bootstrap=78]:0.070279,(FS14_k141_16632_-_ORF_1__frame_1__translation:0.010407,AEM37581_California_sea_lion_sapovirus_1_Zalophus_californianus__California_sea_lion__Sapovirus:1.0E-6)[&bootstrap=100]:0.306692)[&bootstrap=100]:0.292164)[&bootstrap=100]:0.324772,((((QCZ35343_San_Miguel_sea_lion_virus_12_Zalophus_californianus_Vesivirus:0.276689,FS9_k141_68500_-_ORF_2__frame_2__translation:0.275697)[&bootstrap=100]:0.136985,(FS7_k141_43655_-_ORF_1__frame_3__translation:0.120753,(ABI34904_Vesicular_exanthema_of_swine_virus_Vesivirus:0.040065,AAC57044_Reptile_calicivirus_Vesivirus:0.001171)[&bootstrap=100]:0.100185)[&bootstrap=100]:0.096613)[&bootstrap=92]:0.067738,ALF04311_Feline_calicivirus_SH_cheetah_Vesivirus:0.366282)[&bootstrap=100]:0.459919,((QQR34431_Rabbit_hemorrhagic_disease_virus_2_Vulpes_vulpes_Lagovirus:0.122896,QCC62370_Hare_calicivirus_Australia-3_Lepus_europaeus_Lagovirus:0.088715)[&bootstrap=100]:0.698127,((YP_529897_Newbury_agent_1_cattle_Nebovirus:0.050449,'AFO37806_Nebovirus_Bo/M3641/2011/HUN_Bos_taurus__cattle__Nebovirus':0.070304)[&bootstrap=100]:0.389842,ALC74362_Bovine_calicivirus_strain_Kirklareli_bovine_Nebovirus:0.479785)[&bootstrap=100]:0.514521)[&bootstrap=93]:0.136576)[&bootstrap=94]:0.142586)[&bootstrap=92]:0.158552)[&bootstrap=74]:0.136413,((((((((YP_009238498_Norovirus_GIV_Homo_sapiens_Norovirus:0.140308,(FSD17_k141_2047_-_ORF_1__frame_1__translation:0.035085,((FSD3_k141_100302_-_ORF_1__frame_2__translation:0.010004,(FS20_k141_21483_-_ORF_1__frame_3__translation:1.0E-6,FS22_k141_74552_-_ORF_1__frame_3__translation:0.025489)[&bootstrap=84]:0.003552)[&bootstrap=20]:2.0E-6,(AUO60017_California_sea_lion_norovirus_Zalophus_californianus__California_sea_lion__Norovirus:0.009679,FSD3_k141_113413_-_ORF_1__frame_2__translation:0.008806)[&bootstrap=40]:7.68E-4)[&bootstrap=100]:0.038477)[&bootstrap=100]:0.120543)[&bootstrap=98]:0.107291,(QFS19095_Norovirus_GII_swine_Norovirus:0.096627,AXQ39978_Norovirus_GII_Homo_sapiens_Norovirus:0.121605)[&bootstrap=99]:0.077018)[&bootstrap=66]:0.041982,((FSD17_k141_3901_-_ORF_11__frame_2__translation:1.0E-6,FSD13_k141_46436_-_ORF_6__frame_3__translation:1.0E-6)[&bootstrap=82]:1.0E-6,(FS6_k141_63254_-_ORF_1__frame_3__translation:0.008911,FS7_k141_30866_-_ORF_1__frame_3__translation:0.009438)[&bootstrap=54]:1.0E-6)[&bootstrap=100]:0.196252)[&bootstrap=87]:0.121805,4NRU_A_Murine_norovirus_1_Norovirus:0.387567)[&bootstrap=54]:0.068514,YP_009237937_Norovirus_GIII_bovine_Norovirus:0.198179)[&bootstrap=100]:0.680831,((('XUS49666_Valovirus_sp._tibetan_pig_Valovirus':0.080044,ACQ44559_Valovirus_valerienense_Sus_scrofa__swine__Valovirus:0.067046)[&bootstrap=100]:0.429539,WRV02107_Stoat_valovirus_1_Mustela_erminea_Valovirus:0.719229)[&bootstrap=100]:0.32543,('AWU65998_Recovirus_sp._Homo_sapiens_Recovirus':0.347589,AHE37915_Rhesus_macaque_recovirus_rhesus_macaque_Recovirus:0.300069)[&bootstrap=100]:0.486966)[&bootstrap=100]:0.341042)[&bootstrap=90]:0.145818,AVM87221_Guangdong_greater_green_snake_calicivirus_Cyclophiops_major:1.013949)[&bootstrap=99]:0.194007,((YP_009417302_Fathead_minnow_calicivirus_Pimephales_promelas_Minovirus:0.865593,((('WRW35011_Salovirus_sp._Odobenus_rosmarus_Salovirus':0.1875,QIB98724_Atlantic_salmon_calicivirus_Salmo_salar__smolt_Salovirus:0.149414)[&bootstrap=100]:0.126786,UFQ21768_Ameiurus_nebulosus_calicivirus_1_Ameiurus_nebulosus:0.142724)[&bootstrap=100]:0.552121,AVM87226_Zhejiang_gunthers_frog_calicivirus_1_Sylvirana_guentheri:0.639639)[&bootstrap=100]:0.259247)[&bootstrap=100]:0.631569,(AVM87208_Dongbei_arctic_lamprey_calicivirus_1_Lethenteron_camtschaticum:1.299025,USL85468_Avian_associated_calicivirus_1_Prunella_modularis:1.656906)[&bootstrap=84]:0.117948)[&bootstrap=96]:0.230371)[&bootstrap=100]:0.459654)[&bootstrap=100]:0.920831);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=300;
+	set legend.attribute="bootstrap";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bootstrap";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

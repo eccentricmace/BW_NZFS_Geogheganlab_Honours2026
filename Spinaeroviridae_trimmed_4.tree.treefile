@@ -1,0 +1,134 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=32;
+	taxlabels
+	ABO32573_Atlantic_salmon_reovirus_TS_Atlantic_salmon_Aquareovirus
+	AEK86190_Baboon_orthoreovirus_Papio_cynocephalus_Orthoreovirus
+	AGR27926_Piscine_orthoreovirus_Atlantic_salmon_Orthoreovirus
+	AVM87463_Bush_viper_reovirus_Cyclophiops_major_Orthoreovirus
+	BAQ19494_Pycnonotidae_orthoreovirus_Hypsipetes_amaurotis__brown-eared_bulbul__Orthoreovirus
+	FS12_k141_64663_-_ORF_4__frame_3__translation[&!color=#cc0000]
+	FS16_k141_24130_-_ORF_4__frame_3__translation[&!color=#cc0000]
+	FS19_k141_11809_-_ORF_1__frame_3__translation[&!color=#cc0000]
+	FS20_k141_124182_-_ORF_1__frame_2__translation[&!color=#cc0000]
+	FS23_k141_133379_-_ORF_4__frame_3__translation[&!color=#cc0000]
+	FS6_k141_77071_-_ORF_1__frame_2__translation[&!color=#cc0000]
+	FSD10_k141_44999_-_ORF_1__frame_1__translation[&!color=#cc0000]
+	NP_149135_Cypovirus_14_Lymantria_dispar_Cypovirus
+	NP_690891_Colorado_tick_fever_virus_Coltivirus
+	QYV43093_Eyach_virus_Ixodes_ricinus_Coltivirus
+	RDRP_LDCPR_Lymantria_dispar_cypovirus_1_isolate_Rao_Lymantria_dispar__Gypsy_moth___Porthetria_dispar__Cypovirus
+	RDRP_RRSVT_Rice_ragged_stunt_virus__isolate_Thailand__Oryza_rufipogon__Brownbeard_rice___Asian_wild_rice__Oryzavirus
+	UHR49938_Nilaparvata_lugens_reovirus_Nilaparvata_lugens-Fijivirus
+	UXR75125_Mammalian_orthoreovirus_2_Pipistrellus_pipistrellus_XJC15_Orthoreovirus
+	WWV87497_Bat-associated_fijivirus_Miniopterus_schreibersi_Fijivirus
+	XUU16262_Fako_virus_Aedes_aegypti_Dinovernavirus
+	XXH80388_Aedes_albopictus_reovirus_Aedes_albopictus_Dinovernavirus
+	XYZ95006_Avian_orthoreovirus_broiler_chicken__specimen_voucher
+	YCR25877_Recilia_dorsalis_oryzavirus_Recilia_dorsalis_Oryzavirus
+	YP_004769548_Baboon_orthoreovirus_Papio_cynocephalus_Orthoreovirus
+	YP_009111328_Dendrolimus_punctatus_cypovirus_22_Cypovirus
+	YP_009246466_Mahlapitsi_orthoreovirus_Eucampsipoda_africana_Orthoreovirus
+	YP_009252403_Sclerotinia_sclerotiorum_mycoreovirus_4_Sclerotinia_sclerotiorum_Mycoreovirus
+	YP_009507749_Scophthalmus_maximus_reovirus_Scophthalmus_maximus__turbot__Aquareovirus
+	YP_010086008_Kundal_virus_hard_ticks_Coltivirus
+	YP_010839786_Reptilian_orthoreovirus_Testudo_graeca__spur-thighed_tortoise__Orthoreovirus
+	YP_392478_Mycoreovirus_3_Mycoreovirus
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (ABO32573_Atlantic_salmon_reovirus_TS_Atlantic_salmon_Aquareovirus:0.021608,YP_009507749_Scophthalmus_maximus_reovirus_Scophthalmus_maximus__turbot__Aquareovirus:0.030122,(((((((AEK86190_Baboon_orthoreovirus_Papio_cynocephalus_Orthoreovirus:1.0E-6,YP_004769548_Baboon_orthoreovirus_Papio_cynocephalus_Orthoreovirus:1.0E-6)[&bootstrap=100]:0.31448,(((((FS6_k141_77071_-_ORF_1__frame_2__translation:0.006746,(FS12_k141_64663_-_ORF_4__frame_3__translation:0.00381,FS16_k141_24130_-_ORF_4__frame_3__translation:0.003818)[&bootstrap=67]:0.001746)[&bootstrap=51]:0.002069,FS19_k141_11809_-_ORF_1__frame_3__translation:0.006765)[&bootstrap=68]:1.0E-6,FS23_k141_133379_-_ORF_4__frame_3__translation:3.0E-6)[&bootstrap=86]:0.008646,FS20_k141_124182_-_ORF_1__frame_2__translation:2.0E-6)[&bootstrap=80]:0.005467,FSD10_k141_44999_-_ORF_1__frame_1__translation:2.0E-6)[&bootstrap=100]:0.232556)[&bootstrap=100]:0.156301,(YP_009246466_Mahlapitsi_orthoreovirus_Eucampsipoda_africana_Orthoreovirus:0.20617,(AVM87463_Bush_viper_reovirus_Cyclophiops_major_Orthoreovirus:0.11,YP_010839786_Reptilian_orthoreovirus_Testudo_graeca__spur-thighed_tortoise__Orthoreovirus:0.099668)[&bootstrap=100]:0.158038)[&bootstrap=100]:0.079465)[&bootstrap=98]:0.080281,(BAQ19494_Pycnonotidae_orthoreovirus_Hypsipetes_amaurotis__brown-eared_bulbul__Orthoreovirus:0.151244,XYZ95006_Avian_orthoreovirus_broiler_chicken__specimen_voucher:0.15945)[&bootstrap=100]:0.193341)[&bootstrap=94]:0.096284,UXR75125_Mammalian_orthoreovirus_2_Pipistrellus_pipistrellus_XJC15_Orthoreovirus:0.320602)[&bootstrap=96]:0.155996,AGR27926_Piscine_orthoreovirus_Atlantic_salmon_Orthoreovirus:0.543489)[&bootstrap=52]:0.088581,((((((NP_149135_Cypovirus_14_Lymantria_dispar_Cypovirus:0.407869,RDRP_LDCPR_Lymantria_dispar_cypovirus_1_isolate_Rao_Lymantria_dispar__Gypsy_moth___Porthetria_dispar__Cypovirus:0.571887)[&bootstrap=100]:0.320625,(XUU16262_Fako_virus_Aedes_aegypti_Dinovernavirus:0.223835,XXH80388_Aedes_albopictus_reovirus_Aedes_albopictus_Dinovernavirus:0.19155)[&bootstrap=100]:0.964645)[&bootstrap=61]:0.144618,(RDRP_RRSVT_Rice_ragged_stunt_virus__isolate_Thailand__Oryza_rufipogon__Brownbeard_rice___Asian_wild_rice__Oryzavirus:0.859852,YCR25877_Recilia_dorsalis_oryzavirus_Recilia_dorsalis_Oryzavirus:0.930481)[&bootstrap=100]:0.370388)[&bootstrap=81]:0.156917,YP_009111328_Dendrolimus_punctatus_cypovirus_22_Cypovirus:1.074648)[&bootstrap=97]:0.282828,(UHR49938_Nilaparvata_lugens_reovirus_Nilaparvata_lugens-Fijivirus:3.0E-6,WWV87497_Bat-associated_fijivirus_Miniopterus_schreibersi_Fijivirus:0.004242)[&bootstrap=100]:1.626476)[&bootstrap=95]:0.329351,(((NP_690891_Colorado_tick_fever_virus_Coltivirus:0.054541,QYV43093_Eyach_virus_Ixodes_ricinus_Coltivirus:0.06256)[&bootstrap=100]:0.271305,YP_010086008_Kundal_virus_hard_ticks_Coltivirus:0.2641)[&bootstrap=100]:0.658834,(YP_392478_Mycoreovirus_3_Mycoreovirus:0.032541,YP_009252403_Sclerotinia_sclerotiorum_mycoreovirus_4_Sclerotinia_sclerotiorum_Mycoreovirus:0.048994)[&bootstrap=100]:0.807908)[&bootstrap=100]:0.969445)[&bootstrap=100]:1.546677)[&bootstrap=100]:0.547391);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="bootstrap";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bootstrap";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

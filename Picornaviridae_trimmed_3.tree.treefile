@@ -1,0 +1,202 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=100;
+	taxlabels
+	ABB76804_Equine_rhinitis_A_virus_horse_Apthovirus
+	ABG23522_senecavirus_A1_Senecavirus
+	ABO09965_Duck_hepatitis_virus_2_strain_04G_Avihepatovirus
+	AEC47480_Enterovirus_A_Homo_sapiens_Enterovirus
+	AEM05833_mosavirus_A1_Peromyscus_crinitus_Mosavirus
+	AFO66657_gallivirus_A1_Meleagris_gallopavo__domestic_turkey__Gallivirus
+	AGH06056_avisivirus_A1_Meleagris_gallopavo_Avisivirus
+	AGU38152_Encephalomyocarditis_virus_orangutan_Cardiovirus
+	AIF74249_diresapivirus_A1_Rhinolophus_ferrumequinum_Diresapivirus
+	AIF74261_diresapivirus_B1_Nyctalus_velutinus-Diresapivirus
+	AJD39294_Bopivirus_A_Bos_taurus_Bopivirus
+	AJP67527_Canine_kobuvirus_1_domestic_dog_Kobuvirus
+	AKC42744_harkavirus_A1_Falco_tinnunculus__common_kestrel__Harkavirus
+	ALR74727_sicinivirus_A1_Gallus_gallus_domesticus__domestic_chicken__Sicinivirus
+	ALR74729_chicken_orivirus_2_Gallus_gallus_domesticus__domestic_chicken__Orivirus
+	AUO15553_cardiovirus_B3_Rattus_rattus_Cardiovirus
+	AVX29479_rabovirus_C1_Marmota_himalayana_Rabovirus
+	AWK02671_parabovirus_A1_Rattus_norvegicus_Parabovirus
+	AWK02672_Niviventer_confucianus_hunnivirus_Niviventer_confucianus_Hunnivirus
+	AXQ03965_danipivirus_A1_Danio_rerio_Danipivirus
+	AYD75972_teschovirus_B1_swine-Teschovirus
+	AYJ71467_Feline_hunnivirus_cat_Hunnivirus
+	BAS29593_boosepivirus_A1_Bos_taurus_Boosepivirus
+	BFN34991_Erbovirus_A_Equus_caballus_Erbovirus
+	BFZ75795_felipivirus_A2_Felis_catus_Felipivirus
+	FS12_k141_23600_-_ORF_2__frame_2__translation[&!color=#cc0000]
+	FS14_k141_20123_-_ORF_6__frame_3__translation[&!color=#cc0000]
+	FS15_k141_9052_-_ORF_4__frame_3__translation[&!color=#cc0000]
+	FS16_k141_37362_-_ORF_1__frame_3__translation[&!color=#cc0000]
+	FS18_k141_47602_-_ORF_3__frame_2__translation[&!color=#cc0000]
+	FS4_k141_42230_-_ORF_1__frame_1__translation[&!color=#cc0000]
+	FS5_k141_85158_-_ORF_14__frame_2__translation[&!color=#cc0000]
+	FS9_k141_32940_-_ORF_2__frame_3__translation[&!color=#cc0000]
+	FSD13_k141_88654_-_ORF_1__frame_2__translation[&!color=#cc0000]
+	NP_758809_simian_sapelovirus_1_Sapelovirus
+	POLG_HKV1_Human_klassevirus_1_Homo_sapiens__Human__Klassevirus
+	QAA77575_Human_cosavirus_Homo_sapiens_Cosavirus
+	QHX40840_Porcine_teschovirus_22_swine_Teschovirus
+	QUS52515_ludopivirus_A1_Ludopivirus
+	QZE12012_Ailurivirus_C_Ailuropoda_melanoleuca_Ailurivirus
+	QZE12014_Ailurivirus_D_Ailuropoda_melanoleuca_Ailurivirus
+	'UGO57606_Picornavirales_sp._Aegithalos_caudatus'
+	UJQ88288_Pasivirus_A_Sus_scrofa_domesticus_Pasivirus
+	WDR17742_Vole_cardiovirus_vole_Cardiovirus
+	WIW43211_Pteropus_rufus_mischivirus_Pteropus_rufus_Mischivirus
+	WMV70503_Senecavirus_cetus_Phocoena_phocoena_Senecavirus
+	WOZ52021_Yellow-eyed_penguin_megrivirus_Megadyptes_antipodes_Megrivirus
+	WPV63318_Kunsagivirus_A_Niviventer_niviventer_Kunsagivirus
+	WWM22217_Cosavirus_A_Homo_sapiens_Cosavirus
+	WXG28558_Bat_picornavirus_Rousettus_leschenaultii_Shanbavirus
+	WXG28560_Mischivirus_A_Miniopterus_schreibersii_Mischivirus
+	WZI33253_Crohivirus_A_Crocidura_lasiura_Crohivirus
+	XAO13298_Bovine_boosepivirus_Bos_taurus-Boosepivirus
+	'XCM67644_Ampivirus_sp._Ampivirus'
+	XCZ60575_Goose_megrivirus_Minbei_White_geese_Megrivirus
+	XHB07577_Mupivirus_A_Rattus_norvegicus_Mupivirus
+	XHB07582_Myodes_rufocanus_parabovirus_Myodes_rufocanus_Parabovirus
+	XHB07612_Rabovirus_A_Rattus_norvegicus_Rabovirus
+	'XNT21280_Picornavirales_sp._Neodon_fuscus'
+	XNX56418_anativirus_A1_duck-Anativirus
+	XOB75892_Cardiovirus_B_Micromys_minutus_Cardiovirus
+	XOB75901_Yunnan_rodent_mupivirus_1_Apodemus_chevrieri-Mupivirus
+	'XYW66486_Cardiovirus_sp._Marmota_himalayana_Cardiovirus'
+	XYZ94539_Foot-and-mouth_disease_virus_A_Elephant-Aphthovirus
+	YBB99258_Canine_picodicistrovirus_Canis_lupus_familiaris_Dicpipvirus
+	YBB99278_Canine_picornavirus_Canis_lupus_familiaris_Mischivirus
+	YBR42053_Hunnivirus_A_Capra_hircus__domestic_goat__Hunnivirus
+	YBU48422_Teschovirus_A_pig_Teschovirus
+	'YDE35496_Bopivirus_sp._Bos_taurus_Bopivirus'
+	YDU32864_Senecavirus_A_swine_Senecavirus
+	YFG87122_Encephalomyocarditis_virus_Balearica_regulorum__grey_crowned_crane__Cardiovirus
+	YFU50958_Bovine_kobuvirus_Bos_taurus_Kobuvirus
+	YFW11636_Sapelovirus_A_tibetan_pig_Sapelovirus
+	YFW27318_Enterovirus_D_Enterovirus
+	YP_001497152_Seal_picornavirus_type_1_Phoca_hispida_Aquamavirus
+	YP_006607894_limnipivirus_A1_Lepomis_macrochirus_Limnipivirus
+	YP_008802588_Feline_sakobuvirus_A_Felis_catus_Sakobuvirus
+	YP_009026377_aalivirus_A1_Pekin_duck_Aalivirus
+	YP_009111338_torchivirus_A1_Testudo_hermanni_Torchivirus
+	YP_009118269_malagasivirus_A1_Lemur_catta_Malagasivirus
+	YP_009118270_malagasivirus_B1_Varecia_variegata-Malagasivirus
+	YP_009143521_Ampivirus_A1_Lissotriton_vulgaris__common_newt__Ampivirus
+	YP_009164966_hepatovirus_B1_Phoca_vitulina_Hepatovirus
+	YP_009329856_livupivirus_A1_Lissotriton_vulgaris__smooth_newt__Livupivirus
+	YP_009361830_Cosavirus_F_Homo_sapiens_Cosavirus
+	YP_009505607_Dromedary_camel_enterovirus_19CC_dromedary_Enterovirus
+	YP_009505618_rosavirus_A1_Peromyscus_crinitus_Rosavirus
+	YP_009508919_Bovine_rhinitis_A_virus_bovine_Aphthovirus
+	YP_010084727_Rabovirus_B1_rodent_Rabovirus
+	YP_010084735_tottorivirus_A1_Sus_scrofa_domesticus_Tottorivirus
+	YP_010084737_ailurivirus_A1_panda_Ailurivirus
+	YP_010784518_grusopivirus_A1_red-crowned_crane_Grusopivirus
+	YP_010796347_anativirus_B1_Gallus_gallus_domesticus__domestic_chicken__Anativirus
+	YP_010796349_Potamipivirus_A_Gasterosteus_aculeatus_Potamipivirus
+	YP_010796386_tropivirus_A1_Tropidophorus_sinicus_Tropivirus
+	YP_010796388_Hainan_oriental_leaf-toed_gecko_picornavirus_Hemidactylus_bowringii_Hemipivirus
+	YP_010796401_Marmot_mosavirus_Marmota_himalayana_Mosavirus
+	YP_010796627_Bovine_picornavirus_Bos_taurus_Bopivirus
+	YP_010797608_rajidapivirus_A1_Okamejei_acutispina_Rajidapivirus
+	YP_010798299_marsupivirus_A1_Phascolarctos_cinereus_Marsupivirus
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (ABB76804_Equine_rhinitis_A_virus_horse_Apthovirus:0.572767,(YP_009508919_Bovine_rhinitis_A_virus_bovine_Aphthovirus:0.327107,XYZ94539_Foot-and-mouth_disease_virus_A_Elephant-Aphthovirus:0.369812)[&bootstrap=100]:0.316874,(((((((QZE12012_Ailurivirus_C_Ailuropoda_melanoleuca_Ailurivirus:0.032543,(QZE12014_Ailurivirus_D_Ailuropoda_melanoleuca_Ailurivirus:0.016976,YP_010084737_ailurivirus_A1_panda_Ailurivirus:0.047182)[&bootstrap=100]:0.027484)[&bootstrap=100]:0.487231,WIW43211_Pteropus_rufus_mischivirus_Pteropus_rufus_Mischivirus:0.414437)[&bootstrap=98]:0.144779,WXG28560_Mischivirus_A_Miniopterus_schreibersii_Mischivirus:0.536435)[&bootstrap=100]:0.168696,(((((WDR17742_Vole_cardiovirus_vole_Cardiovirus:0.204677,(AUO15553_cardiovirus_B3_Rattus_rattus_Cardiovirus:0.107096,XOB75892_Cardiovirus_B_Micromys_minutus_Cardiovirus:0.087264)[&bootstrap=100]:0.168175)[&bootstrap=100]:0.072938,'XYW66486_Cardiovirus_sp._Marmota_himalayana_Cardiovirus':0.157302)[&bootstrap=100]:0.122445,(AGU38152_Encephalomyocarditis_virus_orangutan_Cardiovirus:0.057902,YFG87122_Encephalomyocarditis_virus_Balearica_regulorum__grey_crowned_crane__Cardiovirus:0.073527)[&bootstrap=100]:0.298447)[&bootstrap=100]:0.26775,((XOB75901_Yunnan_rodent_mupivirus_1_Apodemus_chevrieri-Mupivirus:0.186398,XHB07577_Mupivirus_A_Rattus_norvegicus_Mupivirus:0.179761)[&bootstrap=100]:0.147637,'XNT21280_Picornavirales_sp._Neodon_fuscus':0.233748)[&bootstrap=100]:0.361895)[&bootstrap=73]:0.054522,(((((FSD13_k141_88654_-_ORF_1__frame_2__translation:0.006886,(FS4_k141_42230_-_ORF_1__frame_1__translation:0.00321,FS18_k141_47602_-_ORF_3__frame_2__translation:0.003218)[&bootstrap=92]:0.040752)[&bootstrap=54]:0.007335,FS15_k141_9052_-_ORF_4__frame_3__translation:1.0E-6)[&bootstrap=17]:3.0E-6,(FS14_k141_20123_-_ORF_6__frame_3__translation:1.0E-6,FS12_k141_23600_-_ORF_2__frame_2__translation:0.042057)[&bootstrap=40]:3.0E-6)[&bootstrap=92]:0.030667,FS5_k141_85158_-_ORF_14__frame_2__translation:0.05979)[&bootstrap=100]:0.483647,(WMV70503_Senecavirus_cetus_Phocoena_phocoena_Senecavirus:0.357775,(ABG23522_senecavirus_A1_Senecavirus:0.016208,YDU32864_Senecavirus_A_swine_Senecavirus:0.005019)[&bootstrap=100]:0.424472)[&bootstrap=100]:0.314553)[&bootstrap=99]:0.118749)[&bootstrap=96]:0.072417)[&bootstrap=100]:0.119968,(YP_009361830_Cosavirus_F_Homo_sapiens_Cosavirus:0.221898,(QAA77575_Human_cosavirus_Homo_sapiens_Cosavirus:0.077227,WWM22217_Cosavirus_A_Homo_sapiens_Cosavirus:0.050046)[&bootstrap=100]:0.183235)[&bootstrap=100]:0.580982)[&bootstrap=100]:0.141566,(YP_010798299_marsupivirus_A1_Phascolarctos_cinereus_Marsupivirus:0.836441,(((YP_010796401_Marmot_mosavirus_Marmota_himalayana_Mosavirus:0.513851,AEM05833_mosavirus_A1_Peromyscus_crinitus_Mosavirus:0.48211)[&bootstrap=100]:0.256677,YP_009111338_torchivirus_A1_Testudo_hermanni_Torchivirus:0.723894)[&bootstrap=100]:0.166479,((((((AWK02672_Niviventer_confucianus_hunnivirus_Niviventer_confucianus_Hunnivirus:0.106042,AYJ71467_Feline_hunnivirus_cat_Hunnivirus:0.177015)[&bootstrap=68]:0.058751,YBR42053_Hunnivirus_A_Capra_hircus__domestic_goat__Hunnivirus:0.138805)[&bootstrap=100]:0.420875,(YP_009118270_malagasivirus_B1_Varecia_variegata-Malagasivirus:0.219516,YP_009118269_malagasivirus_A1_Lemur_catta_Malagasivirus:0.241905)[&bootstrap=100]:0.349045)[&bootstrap=99]:0.127399,((AYD75972_teschovirus_B1_swine-Teschovirus:0.103704,QHX40840_Porcine_teschovirus_22_swine_Teschovirus:0.058833)[&bootstrap=100]:0.066509,YBU48422_Teschovirus_A_pig_Teschovirus:0.101639)[&bootstrap=100]:0.655999)[&bootstrap=95]:0.134356,YP_010084735_tottorivirus_A1_Sus_scrofa_domesticus_Tottorivirus:0.71621)[&bootstrap=100]:0.250924,(((((AEC47480_Enterovirus_A_Homo_sapiens_Enterovirus:0.331126,YP_009505607_Dromedary_camel_enterovirus_19CC_dromedary_Enterovirus:0.312329)[&bootstrap=98]:0.073668,YFW27318_Enterovirus_D_Enterovirus:0.314851)[&bootstrap=100]:0.399119,(((AIF74249_diresapivirus_A1_Rhinolophus_ferrumequinum_Diresapivirus:0.227278,AIF74261_diresapivirus_B1_Nyctalus_velutinus-Diresapivirus:0.191268)[&bootstrap=100]:0.474136,(NP_758809_simian_sapelovirus_1_Sapelovirus:0.29758,YFW11636_Sapelovirus_A_tibetan_pig_Sapelovirus:0.400363)[&bootstrap=100]:0.194185)[&bootstrap=100]:0.104411,(((AVX29479_rabovirus_C1_Marmota_himalayana_Rabovirus:0.268099,YP_010084727_Rabovirus_B1_rodent_Rabovirus:0.343808)[&bootstrap=100]:0.092104,XHB07612_Rabovirus_A_Rattus_norvegicus_Rabovirus:0.371978)[&bootstrap=100]:0.221638,((AWK02671_parabovirus_A1_Rattus_norvegicus_Parabovirus:0.256435,XHB07582_Myodes_rufocanus_parabovirus_Myodes_rufocanus_Parabovirus:0.300957)[&bootstrap=100]:0.191008,(((BAS29593_boosepivirus_A1_Bos_taurus_Boosepivirus:0.050519,XAO13298_Bovine_boosepivirus_Bos_taurus-Boosepivirus:0.048318)[&bootstrap=100]:0.320324,('YDE35496_Bopivirus_sp._Bos_taurus_Bopivirus':0.068328,YP_010796627_Bovine_picornavirus_Bos_taurus_Bopivirus:0.093492)[&bootstrap=100]:0.31106)[&bootstrap=100]:0.137775,(BFZ75795_felipivirus_A2_Felis_catus_Felipivirus:0.356237,YBB99278_Canine_picornavirus_Canis_lupus_familiaris_Mischivirus:0.360609)[&bootstrap=95]:0.068214)[&bootstrap=100]:0.087849)[&bootstrap=94]:0.064347)[&bootstrap=100]:0.121976)[&bootstrap=65]:0.086691)[&bootstrap=98]:0.104708,(XNX56418_anativirus_A1_duck-Anativirus:0.432836,YP_010796347_anativirus_B1_Gallus_gallus_domesticus__domestic_chicken__Anativirus:0.628603)[&bootstrap=97]:0.12529)[&bootstrap=100]:0.508861,((((((AFO66657_gallivirus_A1_Meleagris_gallopavo__domestic_turkey__Gallivirus:0.787137,ALR74727_sicinivirus_A1_Gallus_gallus_domesticus__domestic_chicken__Sicinivirus:0.685587)[&bootstrap=100]:0.192363,(((AJP67527_Canine_kobuvirus_1_domestic_dog_Kobuvirus:0.292771,YFU50958_Bovine_kobuvirus_Bos_taurus_Kobuvirus:0.323549)[&bootstrap=100]:0.252765,(YP_008802588_Feline_sakobuvirus_A_Felis_catus_Sakobuvirus:0.537325,POLG_HKV1_Human_klassevirus_1_Homo_sapiens__Human__Klassevirus:0.603619)[&bootstrap=100]:0.103946)[&bootstrap=100]:0.099366,QUS52515_ludopivirus_A1_Ludopivirus:0.541055)[&bootstrap=100]:0.106516)[&bootstrap=100]:0.163476,YP_009329856_livupivirus_A1_Lissotriton_vulgaris__smooth_newt__Livupivirus:0.735227)[&bootstrap=100]:0.242952,((((YBB99258_Canine_picodicistrovirus_Canis_lupus_familiaris_Dicpipvirus:0.796922,YP_009505618_rosavirus_A1_Peromyscus_crinitus_Rosavirus:0.641329)[&bootstrap=100]:0.175931,YP_010796388_Hainan_oriental_leaf-toed_gecko_picornavirus_Hemidactylus_bowringii_Hemipivirus:0.829459)[&bootstrap=92]:0.085717,YP_010796386_tropivirus_A1_Tropidophorus_sinicus_Tropivirus:0.840665)[&bootstrap=87]:0.076626,(WOZ52021_Yellow-eyed_penguin_megrivirus_Megadyptes_antipodes_Megrivirus:0.423499,XCZ60575_Goose_megrivirus_Minbei_White_geese_Megrivirus:0.325016)[&bootstrap=100]:0.667071)[&bootstrap=100]:0.155943)[&bootstrap=41]:0.118935,(AXQ03965_danipivirus_A1_Danio_rerio_Danipivirus:1.042294,YP_010797608_rajidapivirus_A1_Okamejei_acutispina_Rajidapivirus:1.171614)[&bootstrap=78]:0.179739)[&bootstrap=95]:0.105799,((((WXG28558_Bat_picornavirus_Rousettus_leschenaultii_Shanbavirus:0.786433,AKC42744_harkavirus_A1_Falco_tinnunculus__common_kestrel__Harkavirus:0.901347)[&bootstrap=97]:0.15895,('UGO57606_Picornavirales_sp._Aegithalos_caudatus':0.2706,FS9_k141_32940_-_ORF_2__frame_3__translation:0.400349)[&bootstrap=100]:1.078812)[&bootstrap=77]:0.171391,(YP_009164966_hepatovirus_B1_Phoca_vitulina_Hepatovirus:0.386074,FS16_k141_37362_-_ORF_1__frame_3__translation:0.332354)[&bootstrap=100]:0.599348)[&bootstrap=60]:0.11057,((((((((ABO09965_Duck_hepatitis_virus_2_strain_04G_Avihepatovirus:0.45736,YP_010784518_grusopivirus_A1_red-crowned_crane_Grusopivirus:0.572989)[&bootstrap=100]:0.164986,YP_009026377_aalivirus_A1_Pekin_duck_Aalivirus:0.513339)[&bootstrap=100]:0.116681,AGH06056_avisivirus_A1_Meleagris_gallopavo_Avisivirus:0.72562)[&bootstrap=100]:0.130299,ALR74729_chicken_orivirus_2_Gallus_gallus_domesticus__domestic_chicken__Orivirus:0.892127)[&bootstrap=100]:0.297776,((UJQ88288_Pasivirus_A_Sus_scrofa_domesticus_Pasivirus:0.831819,WZI33253_Crohivirus_A_Crocidura_lasiura_Crohivirus:0.581313)[&bootstrap=100]:0.220064,YP_010796349_Potamipivirus_A_Gasterosteus_aculeatus_Potamipivirus:0.889162)[&bootstrap=86]:0.078651)[&bootstrap=96]:0.106098,YP_006607894_limnipivirus_A1_Lepomis_macrochirus_Limnipivirus:1.130574)[&bootstrap=97]:0.108554,(WPV63318_Kunsagivirus_A_Niviventer_niviventer_Kunsagivirus:0.868157,YP_001497152_Seal_picornavirus_type_1_Phoca_hispida_Aquamavirus:0.794717)[&bootstrap=100]:0.36663)[&bootstrap=100]:0.270722,('XCM67644_Ampivirus_sp._Ampivirus':0.152762,YP_009143521_Ampivirus_A1_Lissotriton_vulgaris__common_newt__Ampivirus:0.163523)[&bootstrap=100]:1.43268)[&bootstrap=60]:0.117503)[&bootstrap=100]:0.202255)[&bootstrap=100]:0.17742)[&bootstrap=100]:0.203975)[&bootstrap=93]:0.10264)[&bootstrap=87]:0.063669)[&bootstrap=80]:0.058329)[&bootstrap=85]:0.094151,(BFN34991_Erbovirus_A_Equus_caballus_Erbovirus:0.697411,AJD39294_Bopivirus_A_Bos_taurus_Bopivirus:0.657211)[&bootstrap=100]:0.239425)[&bootstrap=100]:0.304941);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=100;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="bootstrap";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bootstrap";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="Midpoint";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

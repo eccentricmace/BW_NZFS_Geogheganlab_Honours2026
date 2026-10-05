@@ -1,0 +1,1355 @@
+---
+title: "BenWHonsCode"
+author: "Ben White"
+date: "2026-07-26"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+---
+title: "Avian_final_code"
+author: "Stephanie Waller"
+date: "2026-04-08"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r set working directory}
+getwd()
+
+knitr::opts_knit$set(
+  root.dir = "C:/Users/benwh/Desktop/Tree stuff/StephPracticeData"
+)
+setwd("C:/Users/benwh/Desktop/Tree stuff/StephPracticeData")
+
+```
+
+```{r Location}
+#1. Load required libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+#2. Read in your data
+df <- read.csv("RPM_Region_Ben.csv", header = TRUE)
+
+#3. Pivot from wide to long format
+df_long <- df %>%
+  pivot_longer(
+    cols = astroviridae:spinaeroviridae
+,  # adjust if other viral families are included
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+df_grouped <- df_long %>%
+  group_by(Location, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop")
+
+#4. Plot: Stacked bar plot
+ggplot(df_grouped, aes(x = Location, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity") +
+  labs(x = "Location", y = "Total Reads Per Million", fill = "Viral Family") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Step 1: Read the data
+df <- read.csv("RPM_Region_Ben.csv", header = TRUE)
+
+# Step 2: Pivot to long format (viral families into rows)
+df_long <- df %>%
+  pivot_longer(
+    cols = astroviridae:spinaeroviridae,
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+# Step 3: Summarise RPM per sample type and viral family
+df_summary <- df_long %>%
+  group_by(Location, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop")
+
+# Step 4: Plot pie chart for each sample type
+ggplot(df_summary, aes(x = 1, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity", width = 1) +
+  coord_polar("y") +
+  facet_wrap(~ Location) +
+  labs(title = "Viral Family Composition by Location",
+       y = "", x = "", fill = "Viral Family") +
+  theme_void() +
+  theme(legend.position = "right")
+
+```
+
+```{r health status}
+#1. Load required libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+#2. Read in your data
+df <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+
+#3. Pivot from wide to long format
+df_long <- df %>%
+  pivot_longer(
+    cols = astroviridae:spinaeroviridae
+,  # adjust if other viral families are included
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+df_grouped <- df_long %>%
+  group_by(Health_status, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop")
+
+#4. Plot: Stacked bar plot
+ggplot(df_grouped, aes(x = Health_status, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity") +
+  labs(x = "Location", y = "Total Reads Per Million", fill = "Viral Family") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+
+# Load required libraries-Pie chart NO SEDOREOVIRIDAE,PICORNA,Param
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Step 1: Read the data
+df <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+# Step 2: Pivot to long format (viral families into rows)
+df_long <- df %>%
+  pivot_longer(
+    cols = c(astroviridae,caliciviridae,coronaviridae,nodaviridae,phenuviridae,spinaeroviridae),
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+# Step 3: Summarise RPM per sample type and viral family
+# AND calculate percentage
+df_summary <- df_long %>%
+  group_by(Health_status, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop") %>%
+  group_by(Health_status) %>%
+  mutate(Percentage = Total_RPM / sum(Total_RPM) * 100) %>%
+  ungroup()
+
+# Step 4: Plot pie chart for each sample type + add percentages
+ggplot(df_summary, aes(x = 1, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity", width = 1) +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")),
+  position = position_fill(vjust = 0.5), color = "black", size = 3) + 
+  coord_polar("y") +
+  facet_wrap(~ Health_status) +
+  labs(title = "Viral Family Composition by Health Status",
+       y = "", x = "", fill = "Viral Family") +
+  theme_void() +
+  theme(legend.position = "right")
+
+
+# Load required libraries-Pie chart NO SEDOREOVIRIDAE,PICORNA,CALICI,SPINAERO, astro
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Step 1: Read the data
+df <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+# Step 2: Pivot to long format (viral families into rows)
+df_long <- df %>%
+  pivot_longer(
+    cols = c(coronaviridae,nodaviridae,paramyxoviridae,phenuviridae),
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+# Step 3: Summarise RPM per sample type and viral family
+# AND calculate percentage
+df_summary <- df_long %>%
+  group_by(Health_status, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop") %>%
+  group_by(Health_status) %>%
+  mutate(Percentage = Total_RPM / sum(Total_RPM) * 100) %>%
+  ungroup()
+
+# Step 4: Plot pie chart for each sample type + add percentages
+ggplot(df_summary, aes(x = 1, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity", width = 1) +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")),
+  position = position_fill(vjust = 0.5), color = "black", size = 3) + 
+  coord_polar("y") +
+  facet_wrap(~ Health_status) +
+  labs(title = "Viral Family Composition by Health Status",
+       y = "", x = "", fill = "Viral Family") +
+  theme_void() +
+  theme(legend.position = "right")
+
+
+# Load required libraries-Pie chart NO SEDOREOVIRIDAE
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Step 1: Read the data
+df <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+# Step 2: Pivot to long format (viral families into rows)
+df_long <- df %>%
+  pivot_longer(
+    cols = c(astroviridae,caliciviridae,coronaviridae,nodaviridae,paramyxoviridae,phenuviridae,picornaviridae,spinaeroviridae),
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+# Step 3: Summarise RPM per sample type and viral family
+# AND calculate percentage
+df_summary <- df_long %>%
+  group_by(Health_status, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop") %>%
+  group_by(Health_status) %>%
+  mutate(Percentage = Total_RPM / sum(Total_RPM) * 100) %>%
+  ungroup()
+
+# Step 4: Plot pie chart for each sample type + add percentages
+ggplot(df_summary, aes(x = 1, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity", width = 1) +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")),
+  position = position_fill(vjust = 0.5), color = "black", size = 3) + 
+  coord_polar("y") +
+  facet_wrap(~ Health_status) +
+  labs(title = "Viral Family Composition by Health Status",
+       y = "", x = "", fill = "Viral Family") +
+  theme_void() +
+  theme(legend.position = "right")
+
+
+# Load required libraries-FULLPIECHART
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Step 1: Read the data
+df <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+# Step 2: Pivot to long format (viral families into rows)
+df_long <- df %>%
+  pivot_longer(
+    cols = astroviridae:spinaeroviridae,
+    names_to = "Viral_Family",
+    values_to = "RPM"
+  )
+
+# Step 3: Summarise RPM per sample type and viral family
+# AND calculate percentage
+df_summary <- df_long %>%
+  group_by(Health_status, Viral_Family) %>%
+  summarise(Total_RPM = sum(RPM), .groups = "drop") %>%
+  group_by(Health_status) %>%
+  mutate(Percentage = Total_RPM / sum(Total_RPM) * 100) %>%
+  ungroup()
+
+# Step 4: Plot pie chart for each sample type + add percentages
+ggplot(df_summary, aes(x = 1, y = Total_RPM, fill = Viral_Family)) +
+  geom_bar(position="fill", stat = "identity", width = 1) +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")),
+  position = position_fill(vjust = 0.5), color = "black", size = 3) + 
+  coord_polar("y") +
+  facet_wrap(~ Health_status) +
+  labs(title = "Viral Family Composition by Health Status",
+       y = "", x = "", fill = "Viral Family") +
+  theme_void() +
+  theme(legend.position = "right")
+
+```
+
+```{r Normalised viral abundance by General_Location Seal}
+# Load libraries
+library(ggplot2)
+library(reshape2)
+library(dplyr)
+library(readr)
+
+# Step 1: Load normalised abundance data
+normalised_raw <- read.csv("Normalised_LID_Ben.csv", header = TRUE, row.names = 1)
+
+# Step 2: Transpose so families are rows, libraries are columns
+normalised <- t(normalised_raw)
+
+# Step 3: Convert to data frame
+normalised_df <- as.data.frame(normalised)
+
+# Step 4: Add viral family as a column
+normalised_df$family <- rownames(normalised_df)
+
+# Step 5: Reshape to long format
+melted <- melt(normalised_df, id.vars = "family", variable.name = "library", value.name = "abundance")
+
+# Step 6: Load library metadata (e.g. from RPM_Order.csv)
+metadata <- read.csv("RPM_Meta_Ben.csv", header = TRUE)
+names(metadata)
+
+# Step 7: Merge metadata with melted data
+melted$library <- as.character(melted$library)
+metadata$Library_ID <- as.character(metadata$Library_ID)
+
+merged <- left_join(melted, metadata, by = c("library" = "Library_ID"))
+
+# Step 8: Create unique label using General_Location, Bird_order, Bird_species, and library ID
+merged <- merged %>%
+  mutate(library_label = paste(Location, Health_status, library, sep = " | "))
+
+# Step 9: Order factor levels by Location > Health_status 
+merged$Location <- factor(merged$Location,levels = c("Cape Foulwind","Cape Palliser","Cape Saunders","Kaikoura Ohau","Kaikoura Peninsula","Kaikoura South Coast","OPERA"))
+merged$Health_status <- factor(merged$Health_status,levels = c("Diseased", "Healthy"))
+ 
+merged$library_label <- factor(
+  merged$library_label,
+  levels = merged %>%
+    distinct(library, library_label, Location, Health_status) %>%
+    arrange(Location, Health_status, library) %>%
+    pull(library_label))
+  
+# Step 10: Plot
+ggplot(merged, aes(x = library_label, y = family, fill = abundance+1e-6)) +
+  geom_tile() +
+  scale_fill_gradient(low = "white", high = "blue", trans = "log10") +
+  theme_minimal() +
+  labs(x = "Library (Grouped by Region and Health Status)", y = "Viral Family", fill = "Normalised Abundance") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+
+write.csv(merged, "merged_data_heatmap_ordered_Ben.csv", row.names = FALSE)
+
+```
+
+```{r Shannon, location}
+# Load required libraries
+library(dplyr) 
+library(ggplot2) 
+library(vegan) # For diversity() function 
+library(rstatix) # For Dunn's test 
+library(ggpubr) # For adding P-values to plots
+
+# Read in your data
+data_seal <- read.csv("RPM_Region_Ben.csv", header = TRUE)
+
+# Step 1: Identify viral family columns
+viral_cols <- which(names(data_seal) %in% c("astroviridae", "caliciviridae",
+ "coronaviridae", "nodaviridae",
+ "paramyxoviridae", "phenuviridae", "picornaviridae", 
+ "sedoreoviridae", "spinaeroviridae"))
+
+names(data_seal)[viral_cols]
+length(viral_cols)
+
+# Step 2: Calculate Shannon index per sample
+# vegan::diversity requires non-negative abundance values
+str(data_seal[, viral_cols])
+names(data_seal)
+
+data_seal$shannon <- diversity(data_seal[, viral_cols], index = "shannon")
+
+# Step 3: Summarize Shannon index by Bird_order
+order_summary <- data_seal %>%
+  group_by(Location) %>%
+  summarise(mean_shannon = mean(shannon),
+            sd_shannon = sd(shannon),
+            n = n(),
+            se_shannon = sd_shannon / sqrt(n))
+
+# View summary table
+print(order_summary)
+
+# Step 4: Plot Shannon index per Location
+ggplot(data_seal, aes(x = Location, y = shannon)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5) +
+  labs(title = "Shannon Diversity Index per Location",
+       y = "Shannon Diversity (H')",
+       x = "Location") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Step 5: Kruskal-Wallis test for Shannon index
+kruskal.test(shannon ~ Location, data = data_seal)
+#Kruskal-Wallis chi-squared = 5.8862, df = 6, p-value = 0.4361
+
+```
+
+```{r Shannon, region}
+# Load required libraries
+library(dplyr) 
+library(ggplot2) 
+library(vegan) # For diversity() function 
+library(rstatix) # For Dunn's test 
+library(ggpubr) # For adding P-values to plots
+# Read in your data
+data_seal2 <- read.csv("RPM_Broadregion_Ben.csv", header = TRUE)
+
+# Step 1: Identify viral family columns
+viral_cols <- which(names(data_seal2) %in% c("astroviridae", "caliciviridae",
+ "coronaviridae", "nodaviridae",
+ "paramyxoviridae", "phenuviridae", "picornaviridae", 
+ "sedoreoviridae", "spinaeroviridae"))
+
+names(data_seal2)[viral_cols]
+length(viral_cols)
+
+# Step 2: Calculate Shannon index per sample
+# vegan::diversity requires non-negative abundance values
+str(data_seal2[, viral_cols])
+names(data_seal2)
+
+data_seal2$shannon <- diversity(data_seal2[, viral_cols], index = "shannon")
+
+# Step 3: Summarize Shannon index by Bird_order
+order_summary <- data_seal2 %>%
+  group_by(Location) %>%
+  summarise(mean_shannon = mean(shannon),
+            sd_shannon = sd(shannon),
+            n = n(),
+            se_shannon = sd_shannon / sqrt(n))
+
+# View summary table
+print(order_summary)
+
+# Step 4: Plot Shannon index per Location
+ggplot(data_seal2, aes(x = Location, y = shannon)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5) +
+  labs(title = "Shannon Diversity Index by Region",
+       y = "Shannon Diversity (H')",
+       x = "Location") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Step 5: Kruskal-Wallis test for Shannon index
+kruskal.test(shannon ~ Location, data = data_seal2)
+#Kruskal-Wallis chi-squared = 4.0208, df = 3, p-value = 0.2592
+
+# Step 5.5: Pairwise Dunn's test # 
+pairwise_results <- data_seal2 %>% dunn_test( shannon ~ Location, p.adjust.method = "BH" ) 
+
+# View all pairwise results 
+print(pairwise_results) 
+
+# Step 6: Create a clean table of pairwise P-values
+pairwise_table <- pairwise_results %>% select(group1, group2, p, p.adj, p.adj.signif) 
+print(pairwise_table) 
+
+# Prepare P-value labels
+# ---------------------------------------------------------
+
+pairwise_results <- pairwise_results %>%
+  mutate(
+    p.label = paste0(
+      "P = ",
+      format.pval(p.adj, digits = 3, eps = 0.001)
+    )
+  )
+
+
+# ---------------------------------------------------------
+# Set positions for the six P-value brackets
+# ---------------------------------------------------------
+
+pairwise_results <- pairwise_results %>%
+  mutate(
+    y.position = case_when(
+
+      # Adjacent comparisons
+      group1 == "Dunedin" &
+        group2 == "Kaikoura" ~ 1.08,
+
+      group1 == "Kaikoura" &
+        group2 == "Wairarapa" ~ 1.18,
+
+      group1 == "Wairarapa" &
+        group2 == "Westport" ~ 1.28,
+
+      # Comparisons spanning two locations
+      group1 == "Dunedin" &
+        group2 == "Wairarapa" ~ 1.38,
+
+      group1 == "Kaikoura" &
+        group2 == "Westport" ~ 1.48,
+
+      # Largest comparison
+      group1 == "Dunedin" &
+        group2 == "Westport" ~ 1.58
+    )
+  )
+
+
+# Check that all six comparisons have a position
+print(
+  pairwise_results %>%
+    select(group1, group2, p.label, y.position)
+)
+
+
+# Final plot
+# ---------------------------------------------------------
+
+ggplot(data_seal2, aes(x = Location, y = shannon)) +
+
+  geom_boxplot(
+    fill = "skyblue",
+    color = "black",
+    width = 0.6
+  ) +
+
+  geom_jitter(
+    width = 0.15,
+    height = 0,
+    alpha = 0.5,
+    size = 2
+  ) +
+
+  stat_pvalue_manual(
+    pairwise_results,
+    label = "p.label",
+    xmin = "group1",
+    xmax = "group2",
+    y.position = "y.position",
+    tip.length = 0.01,
+    bracket.size = 0.4
+  ) +
+
+  labs(
+    y = "Shannon Diversity (H')",
+    x = "Location"
+  ) +
+
+  theme_minimal(base_size = 14) +
+
+  theme(
+    plot.title = element_blank(),
+
+    axis.text.x = element_text(
+      angle = 45,
+      hjust = 1,
+      color = "black"
+    ),
+
+    axis.text.y = element_text(
+      color = "black"
+    ),
+
+    axis.title = element_text(
+      color = "black"
+    ),
+
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+
+    plot.margin = margin(
+      t = 10,
+      r = 20,
+      b = 20,
+      l = 20
+    )
+  ) +
+
+  scale_y_continuous(
+    expand = expansion(mult = c(0.02, 0.02))
+  ) +
+
+  coord_cartesian(
+    ylim = c(0, 1.65),
+    clip = "off"
+  )
+```
+
+```{r Shannon, healthstatus}
+# Load required libraries
+library(dplyr)
+library(ggplot2)
+library(vegan)  # For diversity() function
+
+# Read in your data
+data_seal3 <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+# Step 1: Identify viral family columns
+viral_cols <- which(names(data_seal3) %in% c("astroviridae", "caliciviridae",
+ "coronaviridae", "nodaviridae",
+ "paramyxoviridae", "phenuviridae", "picornaviridae", 
+ "sedoreoviridae", "spinaeroviridae"))
+
+names(data_seal3)[viral_cols]
+length(viral_cols)
+
+# Step 2: Calculate Shannon index per sample
+# vegan::diversity requires non-negative abundance values
+str(data_seal3[, viral_cols])
+names(data_seal3)
+
+data_seal3$shannon <- diversity(data_seal3[, viral_cols], index = "shannon")
+
+# Step 3: Summarize Shannon index by Bird_order
+order_summary <- data_seal3 %>%
+  group_by(Health_status) %>%
+  summarise(mean_shannon = mean(shannon),
+            sd_shannon = sd(shannon),
+            n = n(),
+            se_shannon = sd_shannon / sqrt(n))
+
+# View summary table
+print(order_summary)
+
+# Step 4: Plot Shannon index per Location
+ggplot(data_seal3, aes(x = Health_status, y = shannon)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5) +
+  labs(title = "Shannon Diversity Index by Health Status",
+       y = "Shannon Diversity (H')",
+       x = "Health status") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Step 5: Kruskal-Wallis test for Shannon index
+kruskal.test(shannon ~ Health_status, data = data_seal3)
+#Kruskal-Wallis chi-squared = 0.068089, df = 1, p-value = 0.7941
+
+```
+
+```{r NMDS on virome composition by location}
+# Load required packages
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+# Step 1: Load the data
+df <- read_csv("RPM_Region_Ben.csv")
+
+# Step 2: Remove library 33 (currently ignored)
+# df <- df %>% filter(Bird_lib != 33)
+
+# Step 3: Subset the viral abundance data
+viral_data <- df %>% select(astroviridae:spinaeroviridae)
+
+# Step 4: Filter out samples with all zeros
+non_zero_rows <- rowSums(viral_data) > 0
+df_filtered <- df[non_zero_rows, ]
+viral_data_filtered <- viral_data[non_zero_rows, ]
+
+# Step 5: Create Bray-Curtis distance matrix
+bray_dist <- vegdist(viral_data_filtered, method = "bray")
+
+# Step 6: Run NMDS
+set.seed(123)  # for reproducibility
+nmds <- metaMDS(viral_data_filtered, distance = "bray", k = 2)
+nmds$stress
+# Step 7: Plot stress plot (optional)
+stressplot(nmds)
+
+# Step 8: Combine NMDS points with metadata
+mds_points <- as.data.frame(nmds$points)
+mds_combined <- cbind(mds_points, Location = df_filtered$Location)
+
+# Step 9: NMDS plot coloured by bird order
+ggplot(mds_combined, aes(x = MDS1, y = MDS2, color = Location)) +
+  geom_jitter(size = 3, width = 0.1, height = 0.1) +  # Add jitter
+  stat_ellipse(type = "t", linetype = "dashed", size = 1) +
+  labs(title = "NMDS of Viral Communities by Location",
+       x = "NMDS1", y = "NMDS2") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+# Step 10: PERMANOVA testing effect of bird order on beta diversity
+set.seed(123)
+adonis_result <- adonis2(bray_dist ~ Location, data = df_filtered, permutations = 999)
+
+# Step 11: Print result
+print(adonis_result)
+
+#          Df SumOfSqs      R2      F Pr(>F)    
+#Model      6   3.3878 0.41006 1.7377  0.005 **
+
+#2nd test - google: dont use location
+
+```
+
+```{r NMDS on virome composition by Region}
+# Load required packages
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+# Step 1: Load the data
+df <- read_csv("RPM_Broadregion_Ben.csv")
+
+# Step 2: Remove library 33 (currently ignored)
+# df <- df %>% filter(Bird_lib != 33)
+
+# Step 3: Subset the viral abundance data
+viral_data <- df %>% select(astroviridae:spinaeroviridae)
+
+# Step 4: Filter out samples with all zeros
+non_zero_rows <- rowSums(viral_data) > 0
+df_filtered <- df[non_zero_rows, ]
+viral_data_filtered <- viral_data[non_zero_rows, ]
+
+# Step 5: Create Bray-Curtis distance matrix
+bray_dist <- vegdist(viral_data_filtered, method = "bray")
+
+# Step 6: Run NMDS
+set.seed(123)  # for reproducibility
+nmds <- metaMDS(viral_data_filtered, distance = "bray", k = 2)
+nmds$stress
+# Step 7: Plot stress plot (optional)
+stressplot(nmds)
+
+# Step 8: Combine NMDS points with metadata
+mds_points <- as.data.frame(nmds$points)
+mds_combined <- cbind(mds_points, Location = df_filtered$Location)
+
+# Step 9: NMDS plot coloured by bird order
+ggplot(mds_combined, aes(x = MDS1, y = MDS2, color = Location)) +
+  geom_jitter(size = 3, width = 0.1, height = 0.1) +  # Add jitter
+  stat_ellipse(type = "t", linetype = "dashed", size = 1) +
+  labs(title = "NMDS of Viral Communities by Region",
+       x = "NMDS1", y = "NMDS2") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+# Step 10: PERMANOVA testing effect of bird order on beta diversity
+set.seed(123)
+adonis_result <- adonis2(bray_dist ~ Location, data = df_filtered, permutations = 999)
+
+# Step 11: Print result
+print(adonis_result)
+
+#          Df SumOfSqs      R2      F Pr(>F)    
+#Model      3   2.1236 0.25705 2.0759  0.004 **
+#second test here: pairwise adonis
+
+# Step 12: Pairwise PERMANOVA between Locations
+
+# Get the unique Location groups
+locations <- unique(df_filtered$Location)
+
+# Create all pairwise combinations
+location_pairs <- combn(locations, 2, simplify = FALSE)
+
+# Run PERMANOVA for each pair
+pairwise_results <- lapply(location_pairs, function(pair) {
+  
+  # Keep only the two Locations being compared
+  keep <- df_filtered$Location %in% pair
+  
+  # Subset distance matrix
+  dist_subset <- as.dist(as.matrix(bray_dist)[keep, keep])
+  
+  # Subset metadata
+  data_subset <- df_filtered[keep, ]
+  
+  # Run PERMANOVA
+  result <- adonis2(
+    dist_subset ~ Location,
+    data = data_subset,
+    permutations = 999
+  )
+  
+  # Return results
+  data.frame(
+    Location_1 = pair[1],
+    Location_2 = pair[2],
+    F = result$F[1],
+    R2 = result$R2[1],
+    p_value = result$`Pr(>F)`[1]
+  )
+})
+
+# Combine results into one table
+pairwise_results <- bind_rows(pairwise_results)
+
+# Correct for multiple comparisons
+pairwise_results$p_adjusted <- p.adjust(
+  pairwise_results$p_value,
+  method = "BH"
+)
+
+# View results
+pairwise_results
+```
+
+```{r NMDS on virome composition by HS}
+# Load required packages
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+
+# Step 1: Load the data
+df <- read_csv("RPM_HS_Ben.csv")
+
+# Step 2: Remove library 33 (currently ignored)
+# df <- df %>% filter(Bird_lib != 33)
+
+# Step 3: Subset the viral abundance data
+viral_data <- df %>% select(astroviridae:spinaeroviridae)
+
+# Step 4: Filter out samples with all zeros
+non_zero_rows <- rowSums(viral_data) > 0
+df_filtered <- df[non_zero_rows, ]
+viral_data_filtered <- viral_data[non_zero_rows, ]
+
+# Step 5: Create Bray-Curtis distance matrix
+bray_dist <- vegdist(viral_data_filtered, method = "bray")
+
+# Step 6: Run NMDS
+set.seed(123)  # for reproducibility
+nmds <- metaMDS(viral_data_filtered, distance = "bray", k = 2)
+
+# Step 7: Plot stress plot (optional)
+stressplot(nmds)
+
+# Step 8: Combine NMDS points with metadata
+mds_points <- as.data.frame(nmds$points)
+mds_combined <- cbind(mds_points, Health_status = df_filtered$Health_status)
+
+# Step 9: NMDS plot coloured by bird order
+ggplot(mds_combined, aes(x = MDS1, y = MDS2, color = Health_status)) +
+  geom_jitter(size = 3, width = 0.1, height = 0.1) +  # Add jitter
+  stat_ellipse(type = "t", linetype = "dashed", size = 1) +
+  labs(title = "NMDS of Viral Communities by Health Status",
+       x = "NMDS1", y = "NMDS2") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+# Step 10: PERMANOVA testing effect of bird order on beta diversity
+set.seed(123)
+adonis_result <- adonis2(bray_dist ~ Health_status, data = df_filtered, permutations = 999)
+
+# Step 11: Print result
+print(adonis_result)
+
+#          Df SumOfSqs      R2      F Pr(>F)    
+#Model      1   0.4249 0.05144 1.0845  0.343
+
+
+#BARRAWREAD1
+library(ggplot2)
+
+data <- read_csv("RAWREAD.csv")
+
+# Extract the number from each Library_ID
+data$Library_number <- as.numeric(
+  gsub("[^0-9]", "", data$Library_ID)
+)
+
+# Sort the data numerically
+data <- data[order(data$Library_number), ]
+
+# Make Library_ID a factor so ggplot uses this order
+data$Library_ID <- factor(
+  data$Library_ID,
+  levels = data$Library_ID
+)
+
+# --------------------------------------------------
+# 3. Create the bar graph
+# --------------------------------------------------
+
+ggplot(data, aes(x = Library_ID, y = Raw_reads / 1000000)) +
+  
+  geom_col(fill = "steelblue") +
+  
+  labs(
+    title = "Raw Reads per Library",
+    x = "Library ID",
+    y = "Raw reads (millions)"
+  ) +
+  
+  theme_classic() +
+  
+  theme(
+    axis.text.x = element_text(
+      angle = 45,
+      hjust = 1
+    ),
+    plot.title = element_text(
+      hjust = 0.5
+    )
+  )
+```
+
+```{bar}
+library(ggplot2)
+library(readr)
+
+# Read the CSV
+raw_data <- read_csv("RAWREAD.csv")
+
+# Specify the exact order of libraries
+library_order <- c(
+  "FSD1","FSD3", "FSD10", "FSD13", "FSD17",  "FS2", "FS20", "FS4", "FS5", 
+  "FS6", "FS7", "FS8", "FS9", "FS21", "FS22", "FS23", "FS11", "FS12", "FS14",
+  "FS15", "FS16", "FS18", "FS19" 
+)
+
+# Set Library_ID as a factor in the specified order
+raw_data$Library_ID <- factor(
+  raw_data$Library_ID,
+  levels = library_order
+)
+
+# Make the bar graph
+ggplot(raw_data, aes(x = Library_ID, y = Raw_reads / 1000000)) +
+  geom_col(fill = "steelblue") +
+  labs(
+    title = "Raw Reads per Library",
+    x = "Library ID",
+    y = "Raw reads (millions)"
+  ) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(
+      angle = 45,
+      hjust = 1
+    ),
+    plot.title = element_text(
+      hjust = 0.5
+    )
+  )
+
+```
+
+```{r Shannon, region-NOSEDO}
+# Load required libraries
+library(dplyr) 
+library(ggplot2) 
+library(vegan) # For diversity() function 
+library(rstatix) # For Dunn's test 
+library(ggpubr) # For adding P-values to plots
+# Read in your data
+data_seal2 <- read.csv("RPM_Broadregion_Ben.csv", header = TRUE)
+
+# Step 1: Identify viral family columns
+viral_cols <- which(names(data_seal2) %in% c("astroviridae", "caliciviridae",
+ "coronaviridae", "nodaviridae",
+ "paramyxoviridae", "phenuviridae", "picornaviridae", "spinaeroviridae"))
+
+names(data_seal2)[viral_cols]
+length(viral_cols)
+
+# Step 2: Calculate Shannon index per sample
+# vegan::diversity requires non-negative abundance values
+str(data_seal2[, viral_cols])
+names(data_seal2)
+
+data_seal2$shannon <- diversity(data_seal2[, viral_cols], index = "shannon")
+
+# Step 3: Summarize Shannon index by Bird_order
+order_summary <- data_seal2 %>%
+  group_by(Location) %>%
+  summarise(mean_shannon = mean(shannon),
+            sd_shannon = sd(shannon),
+            n = n(),
+            se_shannon = sd_shannon / sqrt(n))
+
+# View summary table
+print(order_summary)
+
+# Step 4: Plot Shannon index per Location
+ggplot(data_seal2, aes(x = Location, y = shannon)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5) +
+  labs(title = "Shannon Diversity Index by Region",
+       y = "Shannon Diversity (H')",
+       x = "Location") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Step 5: Kruskal-Wallis test for Shannon index
+kruskal.test(shannon ~ Location, data = data_seal2)
+#Kruskal-Wallis chi-squared = 3.4731, df = 3, p-value = 0.3243
+
+table(data_seal3$Health_status)
+
+# Step 5.5: Pairwise Dunn's test # 
+pairwise_results <- data_seal2 %>% dunn_test( shannon ~ Location, p.adjust.method = "BH" ) 
+
+# View all pairwise results 
+print(pairwise_results) 
+
+# Step 6: Create a clean table of pairwise P-values
+pairwise_table <- pairwise_results %>% select(group1, group2, p, p.adj, p.adj.signif) 
+print(pairwise_table) 
+
+# Prepare P-value labels
+# ---------------------------------------------------------
+
+pairwise_results <- pairwise_results %>%
+  mutate(
+    p.label = paste0(
+      "P = ",
+      format.pval(p.adj, digits = 3, eps = 0.001)
+    )
+  )
+
+
+# ---------------------------------------------------------
+# Set positions for the six P-value brackets
+# ---------------------------------------------------------
+
+pairwise_results <- pairwise_results %>%
+  mutate(
+    y.position = case_when(
+
+      # Adjacent comparisons
+      group1 == "Dunedin" &
+        group2 == "Kaikoura" ~ 1.08,
+
+      group1 == "Kaikoura" &
+        group2 == "Wairarapa" ~ 1.18,
+
+      group1 == "Wairarapa" &
+        group2 == "Westport" ~ 1.28,
+
+      # Comparisons spanning two locations
+      group1 == "Dunedin" &
+        group2 == "Wairarapa" ~ 1.38,
+
+      group1 == "Kaikoura" &
+        group2 == "Westport" ~ 1.48,
+
+      # Largest comparison
+      group1 == "Dunedin" &
+        group2 == "Westport" ~ 1.58
+    )
+  )
+
+
+# Check that all six comparisons have a position
+print(
+  pairwise_results %>%
+    select(group1, group2, p.label, y.position)
+)
+
+
+# Final plot
+# ---------------------------------------------------------
+
+ggplot(data_seal2, aes(x = Location, y = shannon)) +
+
+  geom_boxplot(
+    fill = "skyblue",
+    color = "black",
+    width = 0.6
+  ) +
+
+  geom_jitter(
+    width = 0.15,
+    height = 0,
+    alpha = 0.5,
+    size = 2
+  ) +
+
+  stat_pvalue_manual(
+    pairwise_results,
+    label = "p.label",
+    xmin = "group1",
+    xmax = "group2",
+    y.position = "y.position",
+    tip.length = 0.01,
+    bracket.size = 0.4
+  ) +
+
+  labs(
+    y = "Shannon Diversity (H')",
+    x = "Location"
+  ) +
+
+  theme_minimal(base_size = 14) +
+
+  theme(
+    plot.title = element_blank(),
+
+    axis.text.x = element_text(
+      angle = 45,
+      hjust = 1,
+      color = "black"
+    ),
+
+    axis.text.y = element_text(
+      color = "black"
+    ),
+
+    axis.title = element_text(
+      color = "black"
+    ),
+
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+
+    plot.margin = margin(
+      t = 10,
+      r = 20,
+      b = 20,
+      l = 20
+    )
+  ) +
+
+  scale_y_continuous(
+    expand = expansion(mult = c(0.02, 0.02))
+  ) +
+
+  coord_cartesian(
+    ylim = c(0, 1.65),
+    clip = "off"
+  )
+```
+
+```{r Shannon, healthstatus-NOSEDO}
+# Load required libraries
+library(dplyr)
+library(ggplot2)
+library(vegan)  # For diversity() function
+
+# Read in your data
+data_seal3 <- read.csv("RPM_HS_Ben.csv", header = TRUE)
+
+# Step 1: Identify viral family columns
+viral_cols <- which(names(data_seal3) %in% c("astroviridae", "caliciviridae",
+ "coronaviridae", "nodaviridae",
+ "paramyxoviridae", "phenuviridae", "picornaviridae", "spinaeroviridae"))
+
+names(data_seal3)[viral_cols]
+length(viral_cols)
+
+# Step 2: Calculate Shannon index per sample
+# vegan::diversity requires non-negative abundance values
+str(data_seal3[, viral_cols])
+names(data_seal3)
+
+data_seal3$shannon <- diversity(data_seal3[, viral_cols], index = "shannon")
+
+# Step 3: Summarize Shannon index by Bird_order
+order_summary <- data_seal3 %>%
+  group_by(Health_status) %>%
+  summarise(mean_shannon = mean(shannon),
+            sd_shannon = sd(shannon),
+            n = n(),
+            se_shannon = sd_shannon / sqrt(n))
+
+# View summary table
+print(order_summary)
+
+# Step 4: Plot Shannon index per Location
+ggplot(data_seal3, aes(x = Health_status, y = shannon)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.5) +
+  labs(title = "Shannon Diversity Index by Health Status",
+       y = "Shannon Diversity (H')",
+       x = "Health status") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Step 5: Kruskal-Wallis test for Shannon index
+kruskal.test(shannon ~ Health_status, data = data_seal3)
+#Kruskal-Wallis chi-squared = 1.52, df = 1, p-value = 0.2176
+
+```
+
+
+```{r NMDS on virome composition by Region-NOSEDO}
+# Load required packages
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+# Step 1: Load the data
+df <- read_csv("RPM_Broadregion_Ben.csv")
+
+# Step 2: Remove library 33 (currently ignored)
+# df <- df %>% filter(Bird_lib != 33)
+
+# Step 3: Subset the viral abundance data
+viral_data <- df %>% select(astroviridae, caliciviridae, coronaviridae, nodaviridae, paramyxoviridae, phenuviridae, picornaviridae, spinaeroviridae)
+names(viral_data)
+# Step 4: Filter out samples with all zeros
+non_zero_rows <- rowSums(viral_data) > 0
+df_filtered <- df[non_zero_rows, ]
+viral_data_filtered <- viral_data[non_zero_rows, ]
+
+# Step 5: Create Bray-Curtis distance matrix
+bray_dist <- vegdist(viral_data_filtered, method = "bray")
+
+# Step 6: Run NMDS
+set.seed(123)  # for reproducibility
+nmds <- metaMDS(viral_data_filtered, distance = "bray", k = 2)
+nmds$stress
+# Step 7: Plot stress plot (optional)
+stressplot(nmds)
+
+# Step 8: Combine NMDS points with metadata
+mds_points <- as.data.frame(nmds$points)
+mds_combined <- cbind(mds_points, Location = df_filtered$Location)
+
+# Step 9: NMDS plot coloured by bird order
+ggplot(mds_combined, aes(x = MDS1, y = MDS2, color = Location)) +
+  geom_jitter(size = 3, width = 0.1, height = 0.1) +  # Add jitter
+  stat_ellipse(type = "t", linetype = "dashed", size = 1) +
+  labs(title = "NMDS of Viral Communities by Region",
+       x = "NMDS1", y = "NMDS2") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+# Step 10: PERMANOVA testing effect of bird order on beta diversity
+set.seed(123)
+adonis_result <- adonis2(bray_dist ~ Location, data = df_filtered, permutations = 999)
+
+# Step 11: Print result
+print(adonis_result)
+
+#          Df SumOfSqs      R2      F Pr(>F)    
+#Model      3   1.7112 0.19394 1.3634  0.031 *
+#second test here: pairwise adonis
+
+# Step 12: Pairwise PERMANOVA between Locations
+
+# Get the unique Location groups
+locations <- unique(df_filtered$Location)
+
+# Create all pairwise combinations
+location_pairs <- combn(locations, 2, simplify = FALSE)
+
+# Run PERMANOVA for each pair
+pairwise_results <- lapply(location_pairs, function(pair) {
+  
+  # Keep only the two Locations being compared
+  keep <- df_filtered$Location %in% pair
+  
+  # Subset distance matrix
+  dist_subset <- as.dist(as.matrix(bray_dist)[keep, keep])
+  
+  # Subset metadata
+  data_subset <- df_filtered[keep, ]
+  
+  # Run PERMANOVA
+  result <- adonis2(
+    dist_subset ~ Location,
+    data = data_subset,
+    permutations = 999
+  )
+  
+  # Return results
+  data.frame(
+    Location_1 = pair[1],
+    Location_2 = pair[2],
+    F = result$F[1],
+    R2 = result$R2[1],
+    p_value = result$`Pr(>F)`[1]
+  )
+})
+
+# Combine results into one table
+pairwise_results <- bind_rows(pairwise_results)
+
+# Correct for multiple comparisons
+pairwise_results$p_adjusted <- p.adjust(
+  pairwise_results$p_value,
+  method = "BH"
+)
+
+# View results
+pairwise_results
+
+```
+
+```{r NMDS on virome composition by HS-NOSEDO}
+# Load required packages
+library(vegan)
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+
+# Step 1: Load the data
+df <- read_csv("RPM_HS_Ben.csv")
+
+# Step 2: Remove library 33 (currently ignored)
+# df <- df %>% filter(Bird_lib != 33)
+
+# Step 3: Subset the viral abundance data
+viral_data <- df %>% select(astroviridae, caliciviridae, coronaviridae, nodaviridae, paramyxoviridae, phenuviridae, picornaviridae, spinaeroviridae)
+names(viral_data)
+
+# Step 4: Filter out samples with all zeros
+non_zero_rows <- rowSums(viral_data) > 0
+df_filtered <- df[non_zero_rows, ]
+viral_data_filtered <- viral_data[non_zero_rows, ]
+
+# Step 5: Create Bray-Curtis distance matrix
+bray_dist <- vegdist(viral_data_filtered, method = "bray")
+
+# Step 6: Run NMDS
+set.seed(123)  # for reproducibility
+nmds <- metaMDS(viral_data_filtered, distance = "bray", k = 2)
+
+# Step 7: Plot stress plot (optional)
+stressplot(nmds)
+nmds$stress
+# Step 8: Combine NMDS points with metadata
+mds_points <- as.data.frame(nmds$points)
+mds_combined <- cbind(mds_points, Health_status = df_filtered$Health_status)
+
+# Step 9: NMDS plot coloured by bird order
+ggplot(mds_combined, aes(x = MDS1, y = MDS2, color = Health_status)) +
+  geom_jitter(size = 3, width = 0.1, height = 0.1) +  # Add jitter
+  stat_ellipse(type = "t", linetype = "dashed", size = 1) +
+  labs(title = "NMDS of Viral Communities by Health Status",
+       x = "NMDS1", y = "NMDS2") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+# Step 10: PERMANOVA testing effect of bird order on beta diversity
+set.seed(123)
+adonis_result <- adonis2(bray_dist ~ Health_status, data = df_filtered, permutations = 999)
+
+# Step 11: Print result
+print(adonis_result)
+
+#          Df SumOfSqs      R2      F Pr(>F)    
+#Model     1   0.4852 0.05499 1.1055  0.313
+
+```
